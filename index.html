@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baking - My hobby 🍪</title>
+    <!-- style element inside head -->
+    <style>
+      body {
+        background: linear-gradient(
+          110.5deg,
+          rgba(248, 196, 249, 0.66) 22.8%,
+          rgba(253, 122, 4, 0.15) 64.6%
+        );
+        font-family: system-ui;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      /* style button */
+      button {
+        display: block;
+        margin: 0 auto;
+        border: 1px solid #407088;
+        background: #ffcbcb;
+        font-size: 20px;
+        border-radius: 6px;
+        padding: 10px 15px;
+        transition: all 150ms ease-in-out;
+        font-family: system-ui;
+      }
+
+      button:hover {
+        cursor: pointer;
+        background: #407088;
+        color: white;
+      }
+
+      footer {
+        text-align: center;
+        margin: 15px 0;
+        font-size: 18px;
+      }
+
+      p {
+        line-height: 1.5;
+        font-size: 20px;
+        font-family: Georgia, serif;
+      }
+
+      .container {
+        max-width: 600px;
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        /* margin 0 auto will center the div on the page. change 0 to 20 to add some to top and bottom of page, so button on top has more space */
+        margin: 20px auto;
+      }
+
+      img {
+        /* 100% so the images don't go outside the container holding them */
+        max-width: 100%;
+        cursor: crosshair;
+      }
+
+      .grid img:hover {
+        transform: scale(1.2) rotateZ(12deg);
+      }
+      /* style the theme button */
+      .theme-button {
+        font-size: 12px;
+        background: black;
+        color: white;
+        padding: 5 8px;
+      }
+
+      .theme-button:hover {
+        color: black;
+        background: white;
+      }
+
+      .baking-intro-picture {
+        border-radius: 20px;
+        transition: all 150ms ease-in-out;
+        background: black;
+      }
+
+      /* create a new selector on the same class, when we hover on this */
+      .baking-intro-picture:hover {
+        /* filter contast makes it a little dark when hovered */
+        filter: contrast(50%);
+        transform: scale(1.1);
+      }
+
+      .grid {
+        /* first thing when making a grid */
+        display: grid;
+        /* secont is to tell it how many columns */
+        /* fractional unit 1fr means you want each image in the grid to have two columns and to take the amount of space it should take to fulfill the whole space */
+        grid-template-columns: 1fr 1fr;
+        /* have to account for image size and gap size so it's not bigger than div */
+        /* fractional unit, space column takes, calculate width based on what's around it */
+
+        grid-gap: 20px;
+      }
+
+      .grid img {
+        width: 100%;
+        border-radius: 8px;
+        /* use this if it's not looking good, if photos have different sizes, manipulate before displayed on website
+        object-fit: cover; */
+      }
+
+      /* in dark theme, background black text white */
+      .dark {
+        background: linear-gradient(
+          109.6deg,
+          rgb(0, 0, 0) 11.2%,
+          rgb(11, 132, 145) 91.1%
+        );
+        color: white;
+      }
+
+      .dark .container {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      /* change links in dark mode */
+      .dark a {
+        color: white;
+      }
+    </style>
+  </head>
+  <!--say to JS, whenever we click on the dark button, go to here and add a class of dark-->
+
+  <body>
+    <!--HTML goes inside body-->
+    <!-- add a class to button Dark theme to be able to target this button only -->
+    <button class="theme-button">Change theme</button>
+    <!-- wrap all contents in div and give container, better layer around it, style the div as a whole instead of each part -->
+    <!-- say i want this div to have a max width in the style, by class name -->
+    <div class="container">
+      <h1>🍪🎂🍰 Baking 🍪🎂🍰</h1>
+      <h2>A deliciously fun hobby</h2>
+
+      <!-- image with a link, add a class to it to be able to manipulate this image specifically, not ALL images -->
+      <a href="https://en.wikipedia.org/wiki/Baking" target="_blank">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Freshly_baked_bread_loaves.jpg/300px-Freshly_baked_bread_loaves.jpg"
+          alt=""
+          width="600"
+          class="baking-intro-picture"
+        />
+        <br /><br />
+      </a>
+
+      <!-- create the grid, create a div to go around the images -->
+      <div class="grid">
+        <!-- my personal baking images -->
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/094/782/original/IMG_6360.JPG?1693094125"
+          alt="double chocolate marshmallow cookies"
+          width="300"
+        />
+
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/094/781/original/IMG_6892.JPG?1693094112"
+          alt="carrot cake"
+          width="300"
+        />
+
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/094/779/original/IMG_8604.JPG?1693094103"
+          alt="oreo stuffed cookies"
+          width="300"
+        />
+
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/094/783/original/IMG_6134.JPG?1693094225"
+          alt="easter basket cookies"
+          width="300"
+        />
+      </div>
+      <p>
+        Baking is a method of preparing food that uses dry heat, typically in an
+        oven, but can also be done in hot ashes, or on hot stones. Baking is a
+        fun hobby that any can learn.
+      </p>
+
+      <!-- image a link to wikipedia -->
+      <a href="https://en.wikipedia.org/wiki/Baking" target="_blank">
+        <strong>📖 Read more about baking on Wikipedia<br /><br /></strong>
+      </a>
+
+      <button class="click-here">Click here for a free recipe</button>
+    </div>
+    <footer>Coded by Victoria Greer with HTML, CSS, & JavaScript</footer>
+
+    <script>
+      /* now make function from addEventListener call */
+      function changeTheme() {
+        /* let the body be to select the body, add a classList of "dark" which we made above */
+        let body = document.querySelector("body");
+
+        /* if the body contains dark, then, remove classList of dark from body, else, add dark */
+        /* checking if the class has a body of dark */
+        if (body.classList.contains("dark")) {
+          body.classList.remove("dark");
+        } else {
+          body.classList.add("dark");
+        }
+      }
+
+      function clickForRecipe() {
+        let name = prompt("What is your name?");
+        let emailAddress = prompt("What is your email address?");
+
+        alert(
+          "Thanks " +
+            name +
+            ", we'll send you a recipe to " +
+            emailAddress +
+            ". Happy baking! ☺"
+        );
+      }
+      /* if it's already dark, we want to remove the class of dark, so it can go back to default light theme */
+
+      /* select theme button, select button that has class of theme-button */
+      let themeButton = document.querySelector(".theme-button");
+      /* tell theme button to listen for a click, whenever you click on it, change theme, then make function */
+      themeButton.addEventListener("click", changeTheme);
+
+      /* function to do something with the bottom button, alerts and prompts */
+      let clickHere = document.querySelector(".click-here");
+      clickHere.addEventListener("click", clickForRecipe);
+    </script>
+  </body>
+</html>
